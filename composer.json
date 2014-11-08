@@ -1,6 +1,7 @@
 {
     "name": "a2way/laravel-tenant-migrate",
-    "description": "",
+    "description": "A2Way Laravel Tenant Migrate",
+    "keywords": ["a2way", "laravel"],
     "authors": [
         {
             "name": "Supun Budhajeewa",
