@@ -1,4 +1,6 @@
-<?php namespace A2way\LaravelTenantMigrate;
+<?php
+
+namespace A2way\LaravelTenantMigrate;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +21,30 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('a2way/laravel-tenant-migrate');
+
+		$this->app->bind('a2way::command.migrate.tenant.install', function($app){
+			return new InstallTenantMigrationRepositoryCommand();
+		});
+		$this->app->bind('a2way::command.migrate.tenant', function($app){
+			return new MigrateTenantDabataseCommand();
+		});
+		$this->app->bind('a2way::command.migrate.tenant.refresh', function($app){
+			return new RefreshTenantDatabaseCommand();
+		});
+		$this->app->bind('a2way::command.migrate.tenant.reset', function($app){
+			return new ResetTenantDatabaseCommand();
+		});
+		$this->app->bind('a2way::command.migrate.tenant.rollback', function($app){
+			return new RollbackTenantDatabaseCommand();
+		});
+
+		$this->commands([
+			'a2way::command.migrate.tenant.install',
+			'a2way::command.migrate.tenant',
+			'a2way::command.migrate.tenant.refresh',
+			'a2way::command.migrate.tenant.reset',
+			'a2way::command.migrate.tenant.rollback',
+		]);
 	}
 
 	/**
