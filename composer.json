@@ -1,0 +1,23 @@
+{
+    "name": "a2way/laravel-tenant-migrate",
+    "description": "",
+    "authors": [
+        {
+            "name": "Supun Budhajeewa",
+            "email": "budhajeewa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "A2way\\LaravelTenantMigrate\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
