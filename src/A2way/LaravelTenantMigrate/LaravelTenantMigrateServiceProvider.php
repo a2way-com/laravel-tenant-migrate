@@ -37,6 +37,9 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 		$this->app->bind('a2way::command.migrate.tenant.rollback', function($app){
 			return new RollbackTenantDatabaseCommand();
 		});
+		$this->app->bind('a2way::command.db.tenant.seed', function($app){
+			return new SeedTenantDatabaseCommand();
+		});
 
 		$this->commands([
 			'a2way::command.migrate.tenant.install',
@@ -44,6 +47,7 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 			'a2way::command.migrate.tenant.refresh',
 			'a2way::command.migrate.tenant.reset',
 			'a2way::command.migrate.tenant.rollback',
+			'a2way::command.db.tenant.seed'
 		]);
 	}
 
