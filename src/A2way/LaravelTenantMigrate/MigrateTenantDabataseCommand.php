@@ -48,7 +48,7 @@ class MigrateTenantDabataseCommand extends Command {
 
 		$this->info('Creating migration table in tenant database "'.$databaseName.'"...');
 
-		$this->call('migrate');
+		$this->call('migrate', ['--force' => true]);
 	}
 
 	/**
@@ -72,7 +72,7 @@ class MigrateTenantDabataseCommand extends Command {
 	protected function getOptions()
 	{
 		return array(
-			//array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+			array('force', null, InputOption::VALUE_NONE, 'Force the operation to run when in production.'),
 		);
 	}
 
