@@ -20,8 +20,6 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('a2way/laravel-tenant-migrate');
-
 		$this->app->bind('a2way::command.migrate.tenant.install', function($app){
 			return new InstallTenantMigrationRepositoryCommand();
 		});
