@@ -24,11 +24,11 @@ Each of above commands will perform the task of their cousin commands that has t
 
 1. Issue the following command:
 
-    composer require a2way/laravel-tenant-migrate 1.*
+    composer require dmgdwd/laravel-tenant-migrate 1.*
 
 1. Then add the following line to your Laravel app’s “app/config/app.php” file’s “providers” sub-array.
 
-    A2way\LaravelTenantMigrate\LaravelTenantMigrateServiceProvider
+    dmgdwd\LaravelTenantMigrate\LaravelTenantMigrateServiceProvider
 
 1. Check the installation by issuing "php artisan command". If you are able to see the above commands in your list of commands, installation was successful.
 
