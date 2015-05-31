@@ -1,5 +1,7 @@
 #A2Way Laravel Tenant Migrate
 
+#Upgrade
+
 A2Way Laravel Tenant Migrate is a Laravel package that can be used to migrate different databases without editing database configuration files.
 
 This is specially useful for SaaS (Software as a Service) web applications that stores data of each tenant in different databases. Migrating databases like that can be very hard because you might have to change your database configuration for each tenant database. As you can imagine, this is not a very scalable solution.
