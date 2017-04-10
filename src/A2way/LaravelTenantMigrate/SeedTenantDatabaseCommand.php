@@ -41,14 +41,20 @@ class SeedTenantDatabaseCommand extends Command {
 	{
 		$connectionName = $this->argument('connection-name');
 		$databaseName = $this->argument('database-name');
-		
+		$className = $this->option('class');
+
 		\Config::set('database.connections.'.$connectionName.'.database', $databaseName);
 		$connection = \DB::reconnect($connectionName);
 		\DB::setDefaultConnection($connectionName);
 
 		$this->info('Seeding tenant database "'.$databaseName.'"...');
 
-		$this->call('db:seed');
+		$this->call(
+			'db:seed',
+			[
+				'--class' => $className,
+			]
+		);
 	}
 
 	/**
@@ -72,7 +78,7 @@ class SeedTenantDatabaseCommand extends Command {
 	protected function getOptions()
 	{
 		return array(
-			array('example', null, InputOption::VALUE_OPTIONAL, 'An example option.', null),
+			array('class', null, InputOption::VALUE_REQUIRED, 'Seeder class name.', null),
 		);
 	}
 
