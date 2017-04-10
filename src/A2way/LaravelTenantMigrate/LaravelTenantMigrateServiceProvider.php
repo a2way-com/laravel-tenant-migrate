@@ -38,6 +38,9 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 		$this->app->bind('a2way::command.db.tenant.seed', function($app){
 			return new SeedTenantDatabaseCommand();
 		});
+		$this->app->bind('a2way::command.migrate.tenant.all', function($app){
+			return new MigrateAllTenantDatabasesCommand();
+		});
 
 		$this->commands([
 			'a2way::command.migrate.tenant.install',
@@ -45,7 +48,8 @@ class LaravelTenantMigrateServiceProvider extends ServiceProvider {
 			'a2way::command.migrate.tenant.refresh',
 			'a2way::command.migrate.tenant.reset',
 			'a2way::command.migrate.tenant.rollback',
-			'a2way::command.db.tenant.seed'
+			'a2way::command.db.tenant.seed',
+			'a2way::command.migrate.tenant.all',
 		]);
 	}
 

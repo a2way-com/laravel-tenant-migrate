@@ -46,7 +46,7 @@ class MigrateTenantDabataseCommand extends Command {
 		$connection = \DB::reconnect($connectionName);
 		\DB::setDefaultConnection($connectionName);
 
-		$this->info('Creating migration table in tenant database "'.$databaseName.'"...');
+		$this->info('Migrating tenant database "'.$databaseName.'"...');
 
 		$this->call('migrate');
 	}
