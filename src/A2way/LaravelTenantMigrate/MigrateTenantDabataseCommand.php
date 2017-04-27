@@ -2,6 +2,7 @@
 
 namespace A2way\LaravelTenantMigrate;
 
+use Illuminate\Config\Repository as Config;
 use \Illuminate\Console\Command as Command;
 use \Symfony\Component\Console\Input\InputOption as InputOption;
 use \Symfony\Component\Console\Input\InputArgument as InputArgument;
@@ -41,8 +42,8 @@ class MigrateTenantDabataseCommand extends Command {
 	{
 		$connectionName = $this->argument('connection-name');
 		$databaseName = $this->argument('database-name');
-		
-		\Config::set('database.connections.'.$connectionName.'.database', $databaseName);
+
+        app(Config::class)->set('database.connections.'.$connectionName.'.database', $databaseName);
 		$connection = \DB::reconnect($connectionName);
 		\DB::setDefaultConnection($connectionName);
 
