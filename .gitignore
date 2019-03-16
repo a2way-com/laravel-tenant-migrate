@@ -1,4 +1,6 @@
-/vendor
-composer.phar
 composer.lock
+composer.phar
 .DS_Store
+/nbproject/
+.php_cs.cache
+/vendor/
