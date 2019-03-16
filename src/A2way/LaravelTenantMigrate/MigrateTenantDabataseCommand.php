@@ -37,11 +37,11 @@ class MigrateTenantDabataseCommand extends Command {
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$connectionName = $this->argument('connection-name');
 		$databaseName = $this->argument('database-name');
-		
+		\DB::purge($connectionName);
 		\Config::set('database.connections.'.$connectionName.'.database', $databaseName);
 		$connection = \DB::reconnect($connectionName);
 		\DB::setDefaultConnection($connectionName);

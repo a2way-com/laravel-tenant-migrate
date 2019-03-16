@@ -11,7 +11,7 @@ class MigrateAllTenantDatabasesCommand extends Command {
   protected $name = 'migrate:tenant:all';
   protected $description = 'Migrate all tenant databases.';
 
-  public function fire(){
+  public function handle(){
     $connectionName = $this->argument('connection-name');
 		$databasePrefix = $this->argument('database-prefix');
 

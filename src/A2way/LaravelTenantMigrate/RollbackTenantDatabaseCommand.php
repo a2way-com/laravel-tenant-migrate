@@ -37,7 +37,7 @@ class RollbackTenantDatabaseCommand extends Command {
 	 *
 	 * @return mixed
 	 */
-	public function fire()
+	public function handle()
 	{
 		$connectionName = $this->argument('connection-name');
 		$databaseName = $this->argument('database-name');
