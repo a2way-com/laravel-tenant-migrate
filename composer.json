@@ -1,24 +1,37 @@
 {
     "name": "a2way/laravel-tenant-migrate",
     "description": "A2Way Laravel Tenant Migrate",
+    "type": "library",
     "keywords": ["a2way", "laravel"],
     "authors": [
         {
             "name": "Supun Budhajeewa",
-            "email": "budhajeewa@gmail.com"
+            "email": "budhajeewa@gmail.com",
+            "homepage": "https://budhajeewa.com",
+            "role": "Developer"
         }
     ],
+    "readme": "https://github.com/a2way-com/laravel-tenant-migrate/blob/master/README.md",
+    "license": "ISC",
+    "support": {
+        "email": "budhajeewa@gmail.com",
+        "issues": "https://github.com/a2way-com/laravel-tenant-migrate/issues"
+    },
     "require": {
-        "php": ">=5.4.0",
-        "illuminate/support": ">=4.2"
+        "laravel/framework": "^5.8",
+        "friendsofphp/php-cs-fixer": "^2.14"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
-        "psr-0": {
-            "A2way\\LaravelTenantMigrate\\": "src/"
+        "psr-4": {
+            "A2Way\\LaravelTenantMigrate\\": "src/"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "A2Way\\LaravelTenantMigrate\\A2WayLaravelTenantMigrateServiceProvider"
+            ]
+        }
+    }
 }
