@@ -18,8 +18,7 @@
         "issues": "https://github.com/a2way-com/laravel-tenant-migrate/issues"
     },
     "require": {
-        "laravel/framework": "^5.8",
-        "friendsofphp/php-cs-fixer": "^2.14"
+        "laravel/framework": "^5.8"
     },
     "autoload": {
         "psr-4": {
@@ -33,5 +32,8 @@
                 "A2Way\\LaravelTenantMigrate\\A2WayLaravelTenantMigrateServiceProvider"
             ]
         }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14"
     }
 }

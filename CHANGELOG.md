@@ -2,6 +2,12 @@
 
 ## [Unreleased](https://github.com/a2way-com/laravel-tenant-migrate/compare/master...dev)
 
+## [v1.9.1](https://github.com/a2way-com/laravel-tenant-migrate/compare/v1.9.0...v1.9.1) - 2019-03-16
+
+### Fixed
+
+- `friendsofphp/php-cs-fixer` was required in production mode.
+
 ## [v1.9.0](https://github.com/a2way-com/laravel-tenant-migrate/compare/v1.8.0...v1.9.0) - 2019-03-16
 
 ### Changed
