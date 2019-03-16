@@ -2,6 +2,10 @@
 
 ## [Unreleased](https://github.com/a2way-com/laravel-tenant-migrate/compare/master...dev)
 
+### Added
+
+- ISC License.
+
 ## [v1.7.0](https://github.com/a2way-com/laravel-tenant-migrate/compare/v1.6.0...v1.7.0) - 2019-03-16
 
 ### Added
