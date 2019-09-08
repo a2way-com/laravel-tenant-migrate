@@ -18,7 +18,7 @@
         "issues": "https://github.com/a2way-com/laravel-tenant-migrate/issues"
     },
     "require": {
-        "laravel/framework": "^5.8"
+        "laravel/framework": "^5.8 || ^6.0"
     },
     "autoload": {
         "psr-4": {
