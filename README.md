@@ -14,25 +14,37 @@ Consider financially supporting this project at [https://www.patreon.com/budhaje
 
 Installing A2Way Laravel Tenant Migrate on your Laravel project will add following commands to your artisan tool.
 
- - **migrate:tenant** (connection-name) (database-name)
- - **migrate:tenant:all** (connection-name) (database-prefix)
- - **migrate:tenant:install** (connection-name) (database-name)
- - **migrate:tenant:refresh** (connection-name) (database-name)
- - **migrate:tenant:reset** (connection-name) (database-name)
- - **migrate:tenant:rollback** (connection-name) (database-name)
+ - `migrate:tenant [connection-name] [database-name]`
+ - `migrate:tenant:all [connection-name] [database-prefix]`
+ - `migrate:tenant:install [connection-name] [database-name]`
+ - `migrate:tenant:refresh [connection-name] [database-name]`
+ - `migrate:tenant:reset [connection-name] [database-name]`
+ - `migrate:tenant:rollback [connection-name] [database-name]`
 
-Each of above commands (Except **migrate:tenant:all**.) will perform the task of their cousin commands that has the similar name but for “tenant”. For an example, **migrate:tenant:refresh myConnection myDatabase** will run **migrate:refresh** on **myDatabase**, accessing it through connection details given in **myConnection**.
+Each of above commands (Except `migrate:tenant:all`.) will perform the task of their cousin commands that has the similar name but for “tenant”. For an example, `migrate:tenant:refresh myConnection myDatabase` will run `migrate:refresh` on `myDatabase`, accessing it through connection details given in `myConnection`.
 
-**migrate:tenant:all** will help you to migrate multiple tenant databases at once by specifying their prefix. For an example, if you have tenant databases named *tnt_a*, *tnt_b*, and *tnt_c*, executing **migrate:tenant:all myConnection tnt_** will migrate all three databases.
+`migrate:tenant:all` will help you to migrate multiple tenant databases at once by specifying their prefix. For an example, if you have tenant databases named *tnt_a*, *tnt_b*, and *tnt_c*, executing `migrate:tenant:all myConnection tnt_` will migrate all three databases.
 
 ## Installing
 
 1. Issue the following command:
 
-    composer require a2way/laravel-tenant-migrate 1.*
+```
+composer require a2way/laravel-tenant-migrate ^1.0
+```
 
-1. Then add the following line to your Laravel app’s “app/config/app.php” file’s “providers” sub-array.
+2. Then add the following line to your Laravel app’s `app/config/app.php` file's `providers` sub-array.
 
-    A2way\LaravelTenantMigrate\LaravelTenantMigrateServiceProvider
+```
+A2way\LaravelTenantMigrate\LaravelTenantMigrateServiceProvider::class,
+```
 
-1. Check the installation by issuing "php artisan command". If you are able to see the above commands in your list of commands, installation was successful.
+3. Check the installation by issuing `php artisan` command. If you are able to see the above commands in your list of commands, installation was successful.
+
+## Development Setup
+
+1. Have _Docker_ and _Docker Compose_.
+2. Clone this repo.
+3. Copy `tmp.env` file into `.env` and fill in values.
+4. Copy `laravel/tmp.env` file into `.env` and fill in values (App Key and DB settings.).
+5. Run `docker-compose up`.

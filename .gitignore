@@ -1,6 +1,8 @@
 composer.lock
 composer.phar
 .DS_Store
+/.env
+/laravel/.env
 /nbproject/
 .php_cs.cache
 /vendor/
