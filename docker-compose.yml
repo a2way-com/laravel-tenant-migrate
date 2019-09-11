@@ -1,0 +1,15 @@
+version: '3'
+services:
+  a2way-laravel-tenant-migrate-dev-env:
+    build:
+      context: .
+      args:
+        UID: ${UID}
+        GID: ${GID}
+    ports:
+      - ${HOST_PORT}:8000
+    volumes:
+      - ./laravel/.env:/app/.env
+      - ./laravel/composer.json:/app/composer.json
+      - ./laravel/config/app.php:/app/config/app.php
+      - ./src:/app/package
